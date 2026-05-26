@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Love Island USA 2026 🌴</title>
+  <meta name="description" content="Track bets, islanders, and standings for Love Island USA 2026" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loading-screen">
+    <div class="loader-content">
+      <div class="loader-emoji">🌴</div>
+      <p>Loading the villa…</p>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <div class="header-bg-decor">
+      <span>🌴</span><span>☀️</span><span>💕</span><span>🌊</span><span>🌴</span>
+    </div>
+    <div class="header-inner">
+      <div class="header-sun">☀️</div>
+      <h1>Love Island USA 2026</h1>
+      <p class="header-subtitle">Who will find love… and win the pot? 💰</p>
+
+      <div id="countdown-strip">
+        <div class="countdown-block" id="cd-deadline">
+          <span class="cd-label">🕗 Betting Deadline</span>
+          <div class="cd-timer" id="timer-deadline">--d --h --m --s</div>
+          <span class="cd-sublabel">Wed Jun 4 · 8 pm CT</span>
+        </div>
+        <div class="countdown-divider">·</div>
+        <div class="countdown-block" id="cd-episode">
+          <span class="cd-label">📺 First Episode</span>
+          <div class="cd-timer" id="timer-episode">--d --h --m --s</div>
+          <span class="cd-sublabel">Mon Jun 1 · 8 pm CT</span>
+        </div>
+      </div>
+
+      <div class="header-cta">
+        <a id="join-btn" href="#" class="btn btn-primary">Join the Game 💸</a>
+        <a id="venmo-link" href="https://venmo.com/kendall_morton" target="_blank" class="btn btn-secondary">Venmo @kendall_morton</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <button class="tab-btn active" data-tab="overview">🏠 Overview</button>
+      <button class="tab-btn" data-tab="islanders">🌴 Islanders</button>
+      <button class="tab-btn" data-tab="picks">💸 Picks</button>
+      <button class="tab-btn" data-tab="rules">📋 Rules</button>
+      <button class="tab-btn" data-tab="schedule">📅 Schedule</button>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+
+    <!-- OVERVIEW TAB -->
+    <section id="tab-overview" class="tab-content active">
+      <div class="section-inner">
+        <div class="stats-grid" id="stats-grid">
+          <!-- rendered by JS -->
+        </div>
+        <div class="overview-cols">
+          <div class="overview-left">
+            <div class="card" id="leaders-card">
+              <h2>🏆 Current Leaders</h2>
+              <div id="leaders-list"><p class="muted">Picks open after the first episode!</p></div>
+            </div>
+            <div class="card" id="pot-card">
+              <h2>💰 The Pot</h2>
+              <div id="pot-display">
+                <div class="pot-amount" id="pot-amount">$0</div>
+                <p class="pot-desc">Entry fee: $20 · Split if tied</p>
+              </div>
+            </div>
+          </div>
+          <div class="overview-right">
+            <div class="card" id="status-card">
+              <h2>🎯 Game Status</h2>
+              <div id="game-status-list"><!-- rendered by JS --></div>
+            </div>
+            <div class="card" id="quick-rules-card">
+              <h2>⚡ Quick Rules</h2>
+              <ul class="quick-rules">
+                <li>💵 <strong>$20</strong> to play — Venmo <a id="qr-venmo" href="#" target="_blank">@kendall_morton</a></li>
+                <li>⏰ Pick deadline: <strong>Wed Jun 4 · 8 pm CT</strong></li>
+                <li>🏝️ Furthest islander wins the pot</li>
+                <li>🔀 Buy back for <strong>$15</strong> (pre-Casa Amor)</li>
+                <li>🔀 Switch pick for <strong>$25</strong> (during Casa Amor)</li>
+                <li>🔒 Picks locked after islanders return from Casa Amor</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ISLANDERS TAB -->
+    <section id="tab-islanders" class="tab-content">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>🌴 The Islanders</h2>
+          <p class="section-desc" id="islanders-desc">Meet the cast for Love Island USA 2026.</p>
+        </div>
+        <div id="islanders-grid" class="islanders-grid">
+          <!-- rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PICKS TAB -->
+    <section id="tab-picks" class="tab-content">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>💸 Participant Picks</h2>
+          <p class="section-desc">See who everyone is backing. Strikethrough = eliminated. <strong>Bold</strong> = still in the villa.</p>
+        </div>
+        <div id="picks-table-wrap">
+          <!-- rendered by JS -->
+        </div>
+        <div class="picks-legend">
+          <span class="legend-item"><span class="legend-active">Olandria</span> Active pick</span>
+          <span class="legend-item"><span class="legend-eliminated">~~Taylor~~</span> Eliminated</span>
+          <span class="legend-item"><span class="legend-cost">$15</span> Buy-back cost</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- RULES TAB -->
+    <section id="tab-rules" class="tab-content">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>📋 Rules &amp; How to Play</h2>
+        </div>
+        <div class="rules-grid">
+
+          <div class="card rules-card">
+            <h3>💸 How to Join</h3>
+            <ol>
+              <li>Pay <strong>$20</strong> via Venmo to <a id="rules-venmo" href="#" target="_blank"><strong>@kendall_morton</strong></a></li>
+              <li>Watch the <strong>first episode</strong> (Mon Jun 1 · 8 pm CT on Peacock)</li>
+              <li>Text Kendall your islander pick <strong>before Wed Jun 4 at 8 pm CT</strong></li>
+              <li>Bombshells who enter during episode 1 are eligible picks!</li>
+            </ol>
+          </div>
+
+          <div class="card rules-card">
+            <h3>🏆 How to Win</h3>
+            <ul>
+              <li>The participant whose islander <strong>makes it the furthest</strong> wins the entire pot</li>
+              <li>If multiple people pick the winning islander, <strong>the pot is split equally</strong></li>
+              <li>Keep that in mind when choosing — popular picks split the winnings!</li>
+            </ul>
+          </div>
+
+          <div class="card rules-card">
+            <h3>🔀 Changing Your Pick</h3>
+            <p>There are <strong>two windows</strong> to change your islander:</p>
+            <div class="change-window">
+              <div class="change-icon">☝️</div>
+              <div>
+                <strong>Before islanders return from Casa Amor</strong><br/>
+                If your pick is sent home, you can buy back in with a new islander for <strong>$15</strong> before the next episode airs. Kendall will text you.
+              </div>
+            </div>
+            <div class="change-window">
+              <div class="change-icon">✌️</div>
+              <div>
+                <strong>During the 24-hour Casa Amor window</strong><br/>
+                In the 24 hrs between the last Casa Amor episode and the islanders' return to the villa, you can switch your pick for <strong>$25</strong>. Kendall will send a reminder.
+              </div>
+            </div>
+          </div>
+
+          <div class="card rules-card rules-lock">
+            <h3>🔒 When Picks Lock</h3>
+            <p>Picks are <strong>locked for the rest of the season</strong> when the islanders return from Casa Amor.</p>
+            <p>After that point, you <strong>cannot</strong> switch or buy back in — even if your islander gets sent home.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE TAB -->
+    <section id="tab-schedule" class="tab-content">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>📅 Show Schedule</h2>
+          <p class="section-desc">Episodes air at <strong>8 pm CT</strong> on <a id="sched-peacock" href="#" target="_blank">Peacock</a></p>
+        </div>
+        <div class="schedule-grid" id="schedule-grid">
+          <!-- rendered by JS -->
+        </div>
+        <div class="card schedule-note">
+          <p>🔔 <strong>Tip:</strong> New episodes drop most nights of the week — keep checking back on the Picks tab to see whose islander is still in the villa!</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JOIN MODAL -->
+  <div id="join-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" id="join-modal-close" aria-label="Close">✕</button>
+      <h2>💸 Join the Game</h2>
+      <p>Fill this out to let Kendall know you're in. <strong>Remember to also Venmo $20 to <a id="modal-venmo" href="#" target="_blank">@kendall_morton</a></strong> to lock in your spot.</p>
+      <form id="join-form">
+        <div class="form-group">
+          <label for="join-name">Your Name</label>
+          <input type="text" id="join-name" name="name" placeholder="e.g. Taylor Swift" required />
+        </div>
+        <div class="form-group">
+          <label for="join-islander">Your Islander Pick</label>
+          <select id="join-islander" name="islander">
+            <option value="">-- Select an islander --</option>
+          </select>
+          <p class="form-hint" id="islander-hint">Islanders will be announced after the first episode airs on June 1!</p>
+        </div>
+        <div class="form-group">
+          <label for="join-notes">Notes (optional)</label>
+          <input type="text" id="join-notes" name="notes" placeholder="Any notes for Kendall" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Submit Pick Request 🌴</button>
+      </form>
+      <div id="join-success" class="join-success hidden">
+        <div class="success-emoji">🎉</div>
+        <h3>You're in the game!</h3>
+        <p>Text Kendall your pick too, just to be safe. Don't forget to <strong>Venmo $20 to <a id="success-venmo" href="#" target="_blank">@kendall_morton</a></strong>!</p>
+        <button class="btn btn-secondary" id="join-success-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="site-footer">
+    <div class="footer-inner">
+      <p class="footer-emoji">🌴 ☀️ 💕</p>
+      <p>Love Island USA 2026 · Sundays–Tuesdays &amp; Thursdays–Fridays · 8 pm CT on Peacock</p>
+      <p class="footer-updated">Last updated: <span id="last-updated">–</span> · <span id="refresh-status">Auto-refreshes every 2 min</span></p>
+      <p><a href="admin.html" class="footer-admin-link">Admin ⚙️</a></p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

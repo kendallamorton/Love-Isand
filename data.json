@@ -1,0 +1,31 @@
+{
+  "season": {
+    "year": 2026,
+    "title": "Love Island USA 2026",
+    "subtitle": "Who will find love… and win the pot? 💰",
+    "firstEpisode": "2026-06-01T20:00:00",
+    "bettingDeadline": "2026-06-04T20:00:00",
+    "entryFee": 20,
+    "buyBackFee": 15,
+    "switchFee": 25,
+    "venmo": "@kendall_morton",
+    "venmoLink": "https://venmo.com/kendall_morton",
+    "peacockLink": "https://www.peacocktv.com",
+    "loveIslandAppLink": "https://www.peacocktv.com",
+    "casaAmorLocked": false,
+    "islanderAnnouncementPending": true
+  },
+  "islanders": [],
+  "participants": [],
+  "schedule": {
+    "sunday": true,
+    "monday": true,
+    "tuesday": true,
+    "wednesday": false,
+    "thursday": true,
+    "friday": true,
+    "saturday": false
+  },
+  "adminPasswordHash": "6bb0e8c9e94a8b1e6b1c9fca0f4d1e8b3a2c7f5d9e0b3a4c6d8f1e2b5c7d9a0b",
+  "lastUpdated": "2026-05-26T19:00:00"
+}

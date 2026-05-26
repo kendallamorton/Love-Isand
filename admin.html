@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin ⚙️ · Love Island USA 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+
+  <!-- LOGIN SCREEN -->
+  <div id="admin-login" class="admin-login">
+    <div class="admin-login-box">
+      <div class="admin-logo">🌴</div>
+      <h1>Admin Panel</h1>
+      <p>Love Island USA 2026</p>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="admin-password">Password</label>
+          <input type="password" id="admin-password" placeholder="Enter admin password" required autocomplete="current-password" />
+        </div>
+        <div id="login-error" class="admin-error hidden">Incorrect password. Try again.</div>
+        <button type="submit" class="btn btn-primary btn-full">Enter Admin Panel 🔐</button>
+      </form>
+      <p class="admin-login-back"><a href="index.html">← Back to site</a></p>
+    </div>
+  </div>
+
+  <!-- ADMIN PANEL (hidden until login) -->
+  <div id="admin-panel" class="hidden">
+
+    <!-- ADMIN HEADER -->
+    <div class="admin-header">
+      <div class="admin-header-inner">
+        <div>
+          <h1>⚙️ Admin Panel</h1>
+          <p class="admin-header-sub">Love Island USA 2026 · <a href="index.html" target="_blank">View Site →</a></p>
+        </div>
+        <div class="admin-header-actions">
+          <button class="btn btn-secondary btn-sm" id="export-btn">📥 Export JSON</button>
+          <button class="btn btn-secondary btn-sm" id="import-btn-trigger">📤 Import JSON</button>
+          <input type="file" id="import-file-input" accept=".json" class="hidden" />
+          <button class="btn btn-danger btn-sm" id="logout-btn">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADMIN SAVE BANNER -->
+    <div id="save-banner" class="save-banner hidden">
+      <span id="save-banner-msg">Changes saved locally.</span>
+      <button id="save-banner-close" class="save-banner-close">✕</button>
+    </div>
+
+    <!-- ADMIN MAIN -->
+    <main class="admin-main">
+
+      <!-- ADMIN NAV -->
+      <nav class="admin-nav">
+        <button class="admin-tab-btn active" data-atab="game-settings">⚙️ Settings</button>
+        <button class="admin-tab-btn" data-atab="islanders-mgmt">🌴 Islanders</button>
+        <button class="admin-tab-btn" data-atab="participants-mgmt">💸 Participants</button>
+        <button class="admin-tab-btn" data-atab="pending-bets">📬 Pending Bets</button>
+        <button class="admin-tab-btn" data-atab="data-view">🗄️ Data JSON</button>
+      </nav>
+
+      <!-- ===================== GAME SETTINGS ===================== -->
+      <section id="atab-game-settings" class="admin-tab-content active">
+        <h2>⚙️ Game Settings</h2>
+        <div class="admin-card">
+          <form id="settings-form">
+            <div class="admin-form-grid">
+              <div class="form-group">
+                <label>Season Year</label>
+                <input type="number" id="s-year" name="year" />
+              </div>
+              <div class="form-group">
+                <label>Entry Fee ($)</label>
+                <input type="number" id="s-entry" name="entryFee" />
+              </div>
+              <div class="form-group">
+                <label>Buy-Back Fee ($) <small>Pre-Casa Amor</small></label>
+                <input type="number" id="s-buyback" name="buyBackFee" />
+              </div>
+              <div class="form-group">
+                <label>Switch Fee ($) <small>During Casa Amor</small></label>
+                <input type="number" id="s-switch" name="switchFee" />
+              </div>
+              <div class="form-group">
+                <label>Venmo Handle</label>
+                <input type="text" id="s-venmo" name="venmo" placeholder="@handle" />
+              </div>
+              <div class="form-group">
+                <label>Venmo Link</label>
+                <input type="text" id="s-venmolink" name="venmoLink" placeholder="https://venmo.com/..." />
+              </div>
+              <div class="form-group">
+                <label>Betting Deadline</label>
+                <input type="datetime-local" id="s-deadline" name="bettingDeadline" />
+              </div>
+              <div class="form-group">
+                <label>First Episode</label>
+                <input type="datetime-local" id="s-firstepisode" name="firstEpisode" />
+              </div>
+            </div>
+
+            <div class="admin-toggle-row">
+              <label class="toggle-label">
+                <input type="checkbox" id="s-islander-pending" name="islanderAnnouncementPending" />
+                <span>Islanders not yet announced (show "Coming Soon")</span>
+              </label>
+            </div>
+
+            <div class="admin-toggle-row">
+              <label class="toggle-label">
+                <input type="checkbox" id="s-casa-locked" name="casaAmorLocked" />
+                <span>🔒 <strong>Casa Amor Picks Locked</strong> — Prevents all pick changes</span>
+              </label>
+            </div>
+
+            <h3 style="margin: 1rem 0 .5rem">📅 Episode Schedule</h3>
+            <div class="schedule-toggles">
+              <label class="toggle-label"><input type="checkbox" name="sched-sunday" id="sched-sunday" /> Sunday</label>
+              <label class="toggle-label"><input type="checkbox" name="sched-monday" id="sched-monday" /> Monday</label>
+              <label class="toggle-label"><input type="checkbox" name="sched-tuesday" id="sched-tuesday" /> Tuesday</label>
+              <label class="toggle-label"><input type="checkbox" name="sched-wednesday" id="sched-wednesday" /> Wednesday</label>
+              <label class="toggle-label"><input type="checkbox" name="sched-thursday" id="sched-thursday" /> Thursday</label>
+              <label class="toggle-label"><input type="checkbox" name="sched-friday" id="sched-friday" /> Friday</label>
+              <label class="toggle-label"><input type="checkbox" name="sched-saturday" id="sched-saturday" /> Saturday</label>
+            </div>
+
+            <div class="admin-form-actions">
+              <button type="submit" class="btn btn-primary">💾 Save Settings</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ===================== ISLANDERS MGMT ===================== -->
+      <section id="atab-islanders-mgmt" class="admin-tab-content">
+        <h2>🌴 Manage Islanders</h2>
+
+        <div class="admin-card">
+          <h3>Add New Islander</h3>
+          <form id="add-islander-form" class="inline-form">
+            <input type="text" id="new-islander-name" placeholder="Islander name" required />
+            <input type="text" id="new-islander-emoji" placeholder="Emoji (optional)" maxlength="2" />
+            <label class="toggle-label inline">
+              <input type="checkbox" id="new-islander-bombshell" /> Bombshell
+            </label>
+            <button type="submit" class="btn btn-primary btn-sm">+ Add</button>
+          </form>
+        </div>
+
+        <div class="admin-card">
+          <h3>Current Islanders</h3>
+          <div id="islanders-mgmt-list">
+            <p class="muted">No islanders added yet.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PARTICIPANTS MGMT ===================== -->
+      <section id="atab-participants-mgmt" class="admin-tab-content">
+        <h2>💸 Manage Participants</h2>
+
+        <div class="admin-card">
+          <h3>Add New Participant</h3>
+          <form id="add-participant-form" class="inline-form">
+            <input type="text" id="new-p-name" placeholder="Participant name" required />
+            <select id="new-p-islander">
+              <option value="">-- Pick an Islander (optional) --</option>
+            </select>
+            <label class="toggle-label inline">
+              <input type="checkbox" id="new-p-paid" checked /> Paid $20
+            </label>
+            <button type="submit" class="btn btn-primary btn-sm">+ Add</button>
+          </form>
+        </div>
+
+        <div class="admin-card">
+          <h3>Participants &amp; Picks</h3>
+          <div id="participants-mgmt-list">
+            <p class="muted">No participants yet.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PENDING BETS ===================== -->
+      <section id="atab-pending-bets" class="admin-tab-content">
+        <h2>📬 Pending Bet Requests</h2>
+        <p class="section-desc" style="margin-bottom:1rem">These are submissions from the public "Join" form. Review them and add to Participants once verified &amp; paid.</p>
+        <div id="pending-bets-list" class="admin-card">
+          <p class="muted">No pending bet requests.</p>
+        </div>
+      </section>
+
+      <!-- ===================== DATA VIEW ===================== -->
+      <section id="atab-data-view" class="admin-tab-content">
+        <h2>🗄️ Raw Data (JSON)</h2>
+        <p class="section-desc" style="margin-bottom:1rem">This is the current game state. <strong>Copy this into <code>data.json</code> and commit to your repo</strong> to make changes visible to everyone on their next page load (or auto-refresh).</p>
+        <div class="admin-card">
+          <div class="data-view-actions">
+            <button class="btn btn-primary btn-sm" id="copy-json-btn">📋 Copy JSON</button>
+            <button class="btn btn-secondary btn-sm" id="download-json-btn">📥 Download data.json</button>
+          </div>
+          <pre id="data-json-view" class="json-view"></pre>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ADMIN FOOTER -->
+    <footer class="admin-footer">
+      <p>Love Island USA 2026 Admin Panel · <a href="index.html">← View Public Site</a></p>
+    </footer>
+
+  </div><!-- end #admin-panel -->
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

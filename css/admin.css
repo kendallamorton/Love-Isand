@@ -1,0 +1,423 @@
+/* ===========================
+   ADMIN PANEL STYLES
+   Love Island USA 2026
+   =========================== */
+
+.admin-body {
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+
+/* ---- LOGIN ---- */
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--grad-hero);
+  padding: 1rem;
+}
+
+.admin-login-box {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.admin-logo {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: .75rem;
+}
+
+.admin-login-box h1 {
+  font-size: 1.6rem;
+  margin-bottom: .25rem;
+}
+
+.admin-login-box > p {
+  color: var(--text-mid);
+  margin-bottom: 1.5rem;
+  font-size: .9rem;
+}
+
+.admin-login-box form {
+  text-align: left;
+}
+
+.admin-error {
+  background: #ffe5e5;
+  color: #c0392b;
+  padding: .5rem .75rem;
+  border-radius: var(--radius-sm);
+  font-size: .85rem;
+  margin-bottom: .75rem;
+}
+
+.admin-login-back {
+  margin-top: 1.25rem;
+  font-size: .85rem;
+  color: var(--text-mid);
+}
+
+/* ---- ADMIN HEADER ---- */
+.admin-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-mid);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.admin-header h1 {
+  font-size: 1.25rem;
+  margin-bottom: .15rem;
+}
+
+.admin-header-sub {
+  font-size: .82rem;
+  color: var(--text-mid);
+}
+
+.admin-header-actions {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+/* ---- SAVE BANNER ---- */
+.save-banner {
+  background: #d4edda;
+  border-bottom: 1px solid #c3e6cb;
+  padding: .65rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: .88rem;
+  color: #155724;
+}
+
+.save-banner-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #155724;
+  font-size: 1rem;
+  padding: .1rem .3rem;
+}
+
+/* ---- ADMIN MAIN ---- */
+.admin-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+/* ---- ADMIN NAV ---- */
+.admin-nav {
+  display: flex;
+  gap: .25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 2px solid var(--gray-mid);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0;
+}
+
+.admin-nav::-webkit-scrollbar { display: none; }
+
+.admin-tab-btn {
+  flex: none;
+  padding: .65rem 1rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .2s ease;
+  margin-bottom: -2px;
+}
+
+.admin-tab-btn:hover { color: var(--pink); }
+.admin-tab-btn.active {
+  color: var(--pink);
+  border-bottom-color: var(--pink);
+  font-weight: 600;
+}
+
+/* ---- ADMIN TAB CONTENT ---- */
+.admin-tab-content { display: none; }
+.admin-tab-content.active { display: block; }
+.admin-tab-content > h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+/* ---- ADMIN CARD ---- */
+.admin-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,.06);
+  margin-bottom: 1rem;
+}
+
+.admin-card h3 {
+  font-size: 1rem;
+  margin-bottom: .9rem;
+  color: var(--text);
+}
+
+/* ---- ADMIN FORMS ---- */
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-form-actions {
+  margin-top: 1.25rem;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.admin-toggle-row {
+  margin: .75rem 0;
+}
+
+.toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  cursor: pointer;
+  font-size: .9rem;
+}
+
+.toggle-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--pink);
+  cursor: pointer;
+}
+
+.schedule-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* ---- INLINE FORMS (Add Islander/Participant) ---- */
+.inline-form {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.inline-form input[type="text"],
+.inline-form input[type="number"],
+.inline-form select {
+  flex: 1;
+  min-width: 140px;
+  padding: .55rem .8rem;
+  border: 2px solid var(--gray-mid);
+  border-radius: var(--radius-sm);
+  font-family: 'Poppins', sans-serif;
+  font-size: .88rem;
+  color: var(--text);
+  background: var(--white);
+  transition: border-color .2s;
+}
+
+.inline-form input:focus,
+.inline-form select:focus {
+  outline: none;
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(255,20,147,.1);
+}
+
+.toggle-label.inline {
+  flex: none;
+  font-size: .85rem;
+}
+
+/* ---- ISLANDERS MANAGEMENT LIST ---- */
+.islander-mgmt-item {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .65rem 0;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.islander-mgmt-item:last-child { border-bottom: none; }
+
+.islander-mgmt-emoji { font-size: 1.25rem; flex-shrink: 0; }
+
+.islander-mgmt-info { flex: 1; }
+
+.islander-mgmt-name {
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+.islander-mgmt-name.elim {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+.islander-mgmt-badge {
+  display: inline-block;
+  font-size: .7rem;
+  padding: .1rem .4rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.badge-sm-active { background: #d4edda; color: #155724; }
+.badge-sm-elim   { background: #e2e3e5; color: #6c757d; }
+.badge-sm-bomb   { background: #e8d5ff; color: #6f42c1; }
+
+.islander-mgmt-actions { display: flex; gap: .4rem; flex-shrink: 0; flex-wrap: wrap; }
+
+/* ---- PARTICIPANT MANAGEMENT LIST ---- */
+.participant-mgmt-item {
+  padding: .85rem 0;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+.participant-mgmt-item:last-child { border-bottom: none; }
+
+.participant-mgmt-header {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .4rem;
+}
+
+.participant-mgmt-name { font-weight: 600; font-size: .9rem; flex: 1; }
+
+.participant-mgmt-picks { font-size: .84rem; color: var(--text-mid); margin-bottom: .5rem; }
+.pick-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  background: var(--pink-pale);
+  padding: .15rem .55rem;
+  border-radius: var(--radius-full);
+  margin-right: .3rem;
+  font-size: .8rem;
+}
+.pick-pill.active-pick { background: #d4edda; color: #155724; font-weight: 600; }
+.pick-pill.elim-pick { background: #e2e3e5; color: #6c757d; text-decoration: line-through; }
+
+.participant-mgmt-actions { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+/* ---- ADD PICK INLINE ---- */
+.add-pick-row {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+  margin-top: .5rem;
+  align-items: flex-end;
+}
+
+.add-pick-row select,
+.add-pick-row input[type="number"] {
+  padding: .4rem .65rem;
+  border: 2px solid var(--gray-mid);
+  border-radius: var(--radius-sm);
+  font-family: 'Poppins', sans-serif;
+  font-size: .82rem;
+  color: var(--text);
+  background: var(--white);
+}
+
+.add-pick-row select:focus,
+.add-pick-row input:focus {
+  outline: none;
+  border-color: var(--pink);
+}
+
+/* ---- PENDING BETS ---- */
+.pending-bet-item {
+  padding: .85rem 0;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+.pending-bet-item:last-child { border-bottom: none; }
+
+.pending-bet-header {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .3rem;
+}
+
+.pending-bet-name { font-weight: 600; font-size: .9rem; flex: 1; }
+.pending-bet-meta { font-size: .78rem; color: var(--text-light); }
+.pending-bet-islander { font-size: .84rem; color: var(--text-mid); margin-bottom: .5rem; }
+.pending-bet-notes { font-size: .82rem; color: var(--text-mid); font-style: italic; }
+.pending-bet-actions { display: flex; gap: .4rem; flex-wrap: wrap; margin-top: .5rem; }
+
+/* ---- JSON VIEW ---- */
+.data-view-actions {
+  display: flex;
+  gap: .5rem;
+  margin-bottom: .75rem;
+}
+
+.json-view {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: .78rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  max-height: 500px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ---- ADMIN FOOTER ---- */
+.admin-footer {
+  background: var(--white);
+  border-top: 1px solid var(--gray-mid);
+  text-align: center;
+  padding: 1rem;
+  font-size: .82rem;
+  color: var(--text-mid);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 600px) {
+  .admin-header-inner { flex-direction: column; align-items: flex-start; }
+  .admin-form-grid { grid-template-columns: 1fr; }
+  .inline-form { flex-direction: column; }
+  .inline-form input, .inline-form select { min-width: unset; }
+}
