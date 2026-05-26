@@ -301,7 +301,7 @@ function renderIslanders() {
       <div class="islanders-coming-soon">
         <span class="coming-soon-emoji">🌅</span>
         <p class="coming-soon-title">Coming Soon!</p>
-        <p>The villa is being prepped. Islanders will be revealed after the first episode airs on <strong>Monday, June 1</strong>.</p>
+        <p>The villa is being prepped. Islanders will be revealed after the first episode airs on <strong>Tuesday, June 2</strong>.</p>
       </div>`;
     return;
   }
@@ -479,7 +479,7 @@ function populateJoinIslanderSelect() {
   if (!sel || !gameData) return;
   const active = (gameData.islanders || []).filter(i => i.status === 'active');
   if (!active.length) {
-    sel.innerHTML = '<option value="">-- Islanders TBA after June 1 --</option>';
+    sel.innerHTML = '<option value="">-- Islanders TBA after June 2 --</option>';
     if (hint) hint.style.display = '';
     return;
   }

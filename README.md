@@ -94,7 +94,7 @@ Replace `'loveisland2026'` with your chosen password.
 ## 📋 Rules Summary (from the game)
 
 - **$20** to play — Venmo @kendall_morton
-- Pick your islander **before Wednesday June 4, 8 pm CT**
+- Pick your islander **before Wednesday June 3, 8 pm CT**
 - The participant whose islander **makes it the furthest** wins the pot
 - If multiple people pick the winner, **the pot is split**
 - **Buy back** for **$15** if your pick is sent home before Casa Amor
