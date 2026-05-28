@@ -16,11 +16,11 @@
 // ============================================================
 
 const FIREBASE_CONFIG = {
-  apiKey:            "",   // paste from Firebase console
-  authDomain:        "",
-  databaseURL:       "",   // looks like https://YOUR-PROJECT-default-rtdb.firebaseio.com
-  projectId:         "",
-  storageBucket:     "",
-  messagingSenderId: "",
-  appId:             "",
+  apiKey:            "AIzaSyD31-EH-ptQXyu9Tswn51JVdLax0xe1cH0",
+  authDomain:        "love-island-2026.firebaseapp.com",
+  databaseURL:       "https://love-island-2026-default-rtdb.firebaseio.com",
+  projectId:         "love-island-2026",
+  storageBucket:     "love-island-2026.firebasestorage.app",
+  messagingSenderId: "761122797830",
+  appId:             "1:761122797830:web:e6c3f856bb24af91404687",
 };
