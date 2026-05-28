@@ -296,7 +296,7 @@ function renderIslanders() {
   const { islanders, season } = gameData;
 
   if (!islanders.length) {
-    if (desc) desc.textContent = 'Islanders will be announced soon. Check back after the first episode!';
+    if (desc) desc.textContent = 'Islanders will be announced soon.';
     grid.innerHTML = `
       <div class="islanders-coming-soon">
         <span class="coming-soon-emoji">🌅</span>
