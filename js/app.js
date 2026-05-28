@@ -301,7 +301,7 @@ function renderIslanders() {
       <div class="islanders-coming-soon">
         <span class="coming-soon-emoji">🌅</span>
         <p class="coming-soon-title">Coming Soon!</p>
-        <p>The villa is being prepped. Islanders will be revealed after the first episode airs on <strong>Tuesday, June 2</strong>.</p>
+        <p>Check back soon!</p>
       </div>`;
     return;
   }
