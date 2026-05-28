@@ -59,6 +59,7 @@
       <button class="tab-btn" data-tab="picks">💸 Picks</button>
       <button class="tab-btn" data-tab="rules">📋 Rules</button>
       <button class="tab-btn" data-tab="schedule">📅 Schedule</button>
+      <button class="tab-btn" data-tab="chat">💬 Chat</button>
     </div>
   </nav>
 
@@ -204,6 +205,63 @@
       </div>
     </section>
 
+    <!-- CHAT TAB -->
+    <section id="tab-chat" class="tab-content">
+      <div class="section-inner chat-section-inner">
+        <div class="section-header">
+          <h2>💬 Group Chat</h2>
+          <p class="section-desc">Talk trash, celebrate, commiserate — the whole group can see this.</p>
+        </div>
+
+        <!-- Name bar -->
+        <div class="chat-name-bar" id="chat-name-bar">
+          <span class="chat-name-label">Chatting as:</span>
+          <span class="chat-current-name" id="chat-current-name"></span>
+          <button class="chat-change-name-btn" id="chat-change-name-btn">✏️ Change</button>
+        </div>
+
+        <!-- Name setup (shown when no name set) -->
+        <div class="chat-name-setup" id="chat-name-setup">
+          <form id="chat-name-form" class="chat-name-form">
+            <input type="text" id="chat-name-input" placeholder="Your name (e.g. Kendall)" maxlength="30" required autocomplete="nickname" />
+            <button type="submit" class="btn btn-primary btn-sm">Set Name &amp; Chat →</button>
+          </form>
+        </div>
+
+        <!-- Firebase not configured notice -->
+        <div id="chat-config-notice" class="chat-config-notice hidden">
+          <span>⚙️</span>
+          <div>
+            <strong>Chat setup needed.</strong>
+            See <code>firebase-config.js</code> — takes about 5 minutes and is free.
+            <a href="https://console.firebase.google.com" target="_blank">Open Firebase Console →</a>
+          </div>
+        </div>
+
+        <!-- Message feed -->
+        <div class="chat-feed-wrap hidden" id="chat-feed-wrap">
+          <div class="chat-feed" id="chat-feed">
+            <div class="chat-loading">Loading messages…</div>
+          </div>
+        </div>
+
+        <!-- Compose bar -->
+        <div class="chat-compose hidden" id="chat-compose">
+          <form id="chat-send-form" class="chat-send-form">
+            <input
+              type="text"
+              id="chat-message-input"
+              placeholder="Send a message…"
+              maxlength="500"
+              autocomplete="off"
+            />
+            <button type="submit" class="btn btn-primary chat-send-btn" aria-label="Send">Send ↑</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- JOIN MODAL -->
@@ -249,6 +307,12 @@
     </div>
   </footer>
 
+  <!-- Firebase SDK (Realtime Database) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  <!-- Your Firebase config — fill in firebase-config.js -->
+  <script src="firebase-config.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/chat.js"></script>
 </body>
 </html>
