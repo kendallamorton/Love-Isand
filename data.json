@@ -15,7 +15,104 @@
     "casaAmorLocked": false,
     "islanderAnnouncementPending": true
   },
-  "islanders": [],
+  "islanders": [
+    {
+      "id": "aniya_harvey_1780019403712",
+      "name": "Aniya Harvey",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/b16e7133-6c7c-436c-bc72-98d446f59d0c.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "beatriz_hatz_1780019408542",
+      "name": "Beatriz Hatz",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/ae552972-97d6-4c84-a257-0c0834707559.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "bryce_dettloff_1780019443289",
+      "name": "Bryce Dettloff",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/5578657b-5b63-4194-86e7-beffca331940.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "gabriel_vasconcelos_1780019467693",
+      "name": "Gabriel Vasconcelos",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/862fd400-2ea8-4f62-a558-0cd9ebefbb65.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "kc_chandler_1780019491801",
+      "name": "KC Chandler",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/74cccdb2-c142-4f07-b1f2-6c8834e196da.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "kenzie_annis_1780019507658",
+      "name": "Kenzie Annis",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/447ddefa-5906-472f-b560-130ab0b5f987.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "melanie_moreno_1780019532539",
+      "name": "Melanie Moreno",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/8a1bb0e2-0030-43a1-89e2-8382ddce8ce9.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "sean_reifel_1780019551086",
+      "name": "Sean Reifel",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/30ce2dc1-945c-4c01-8392-22e67a89e747.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "sincere_rhea_1780019565771",
+      "name": "Sincere Rhea",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/3b7eb94d-e185-4794-966f-958b0df55a69.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "trinity_tatum_1780019582208",
+      "name": "Trinity Tatum",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/500fab10-7767-4efa-9d3c-aaab1f25cdd4.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "vasana_montgomery_1780019597306",
+      "name": "Vasana Montgomery",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/4bc352ee-1896-492b-86f4-194caee99968.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "zach_georgiou_1780019616540",
+      "name": "Zach Georgiou",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/1a1920f3-c723-478c-ad50-a3e30560e2e3.png?crop=1xw:1xh;center,top"
+    }
+  ],
   "participants": [],
   "schedule": {
     "sunday": true,
@@ -27,5 +124,5 @@
     "saturday": false
   },
   "adminPasswordHash": "6bb0e8c9e94a8b1e6b1c9fca0f4d1e8b3a2c7f5d9e0b3a4c6d8f1e2b5c7d9a0b",
-  "lastUpdated": "2026-05-26T19:00:00"
+  "lastUpdated": "2026-05-29T02:02:41.823Z"
 }
