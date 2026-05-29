@@ -194,10 +194,17 @@ function renderIslandersMgmt() {
           ? '<span class="islander-mgmt-badge badge-sm-bomb">Bombshell</span>'
           : '<span class="islander-mgmt-badge badge-sm-active">Active</span>';
 
+      const thumb = isl.photo
+        ? `<img src="${escAttr(isl.photo)}" alt="${escAttr(isl.name)}" class="islander-mgmt-thumb" onerror="this.style.display='none'" />`
+        : `<span class="islander-mgmt-emoji">🌴</span>`;
+
       return `<div class="islander-mgmt-item">
-        <span class="islander-mgmt-emoji">${isl.emoji || '🌴'}</span>
+        ${thumb}
         <div class="islander-mgmt-info">
           <div class="islander-mgmt-name ${isElim ? 'elim' : ''}">${escHtml(isl.name)} ${badge}</div>
+          <div class="islander-photo-row">
+            <input type="text" class="islander-photo-input" value="${escAttr(isl.photo || '')}" placeholder="Paste photo URL…" onchange="setIslanderPhoto(${idx}, this.value)" />
+          </div>
         </div>
         <div class="islander-mgmt-actions">
           ${isElim
@@ -216,10 +223,10 @@ function renderIslandersMgmt() {
     addForm.onsubmit = (e) => {
       e.preventDefault();
       const name  = getVal('new-islander-name').trim();
-      const emoji = getVal('new-islander-emoji').trim() || '🌴';
+      const photo = getVal('new-islander-photo').trim();
       const bomb  = isChecked('new-islander-bombshell');
       if (!name) return;
-      addIslander(name, emoji, bomb);
+      addIslander(name, photo, bomb);
       e.target.reset();
     };
   }
@@ -228,13 +235,20 @@ function renderIslandersMgmt() {
   refreshIslanderSelects();
 }
 
-function addIslander(name, emoji, isBombshell) {
+function addIslander(name, photo, isBombshell) {
   const id = slugify(name) + '_' + Date.now();
   adminData.islanders = adminData.islanders || [];
-  adminData.islanders.push({ id, name, emoji, status: 'active', isBombshell });
+  adminData.islanders.push({ id, name, photo: photo || '', status: 'active', isBombshell });
   saveAdminData();
   renderIslandersMgmt();
   renderParticipantsMgmt();
+}
+
+function setIslanderPhoto(idx, url) {
+  if (!adminData.islanders[idx]) return;
+  adminData.islanders[idx].photo = url.trim();
+  saveAdminData();
+  renderIslandersMgmt();
 }
 
 function setIslanderStatus(idx, status) {
@@ -530,6 +544,7 @@ function fromDatetimeLocal(val) {
 
 // Expose for inline onclick handlers
 window.setIslanderStatus  = setIslanderStatus;
+window.setIslanderPhoto   = setIslanderPhoto;
 window.removeIslander     = removeIslander;
 window.addPickToParticipant = addPickToParticipant;
 window.removePick         = removePick;

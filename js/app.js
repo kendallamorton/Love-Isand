@@ -315,13 +315,15 @@ function renderIslanders() {
   grid.innerHTML = sorted.map(isl => {
     const isElim = isl.status === 'eliminated';
     const isBomb = isl.isBombshell;
-    const emoji  = isl.emoji || (isBomb ? '💣' : (isElim ? '💔' : '💛'));
     const badge  = isElim ? '<span class="islander-badge badge-eliminated">Eliminated</span>'
                  : isBomb ? '<span class="islander-badge badge-bombshell">Bombshell</span><span class="islander-badge badge-active">Active</span>'
                  : '<span class="islander-badge badge-active">Active ✨</span>';
+    const avatar = isl.photo
+      ? `<img src="${escHtml(isl.photo)}" alt="${escHtml(isl.name)}" class="islander-photo" loading="lazy" onerror="this.parentElement.innerHTML='💛'" />`
+      : `<span class="islander-emoji-fallback">${isBomb ? '💣' : (isElim ? '💔' : '💛')}</span>`;
     return `
       <div class="islander-card ${isElim ? 'eliminated' : 'active'}">
-        <div class="islander-avatar">${emoji}</div>
+        <div class="islander-avatar">${avatar}</div>
         <div class="islander-name">${escHtml(isl.name)}</div>
         ${badge}
       </div>`;

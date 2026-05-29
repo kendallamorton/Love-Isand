@@ -277,6 +277,32 @@
 
 .islander-mgmt-emoji { font-size: 1.25rem; flex-shrink: 0; }
 
+.islander-mgmt-thumb {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  flex-shrink: 0;
+  border: 2px solid var(--gray-mid);
+}
+
+.islander-photo-row {
+  margin-top: .35rem;
+}
+.islander-photo-input {
+  width: 100%;
+  padding: .3rem .6rem;
+  border: 1px solid var(--gray-mid);
+  border-radius: var(--radius-sm);
+  font-family: 'Poppins', sans-serif;
+  font-size: .75rem;
+  color: var(--text-mid);
+}
+.islander-photo-input:focus {
+  outline: none;
+  border-color: var(--pink);
+}
+
 .islander-mgmt-info { flex: 1; }
 
 .islander-mgmt-name {

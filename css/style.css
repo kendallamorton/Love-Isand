@@ -422,19 +422,32 @@ ul { list-style: none; padding: 0; }
 .islander-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
 
 .islander-avatar {
-  width: 64px; height: 64px;
+  width: 80px; height: 80px;
   border-radius: 50%;
   background: var(--grad-hero);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.8rem;
   margin: 0 auto .75rem;
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
 }
 .islander-card.active .islander-avatar {
-  background: var(--grad-active);
   box-shadow: 0 4px 12px rgba(255,215,0,.4);
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
 }
-.islander-card.eliminated .islander-avatar { background: var(--grad-elim); }
+.islander-card.eliminated .islander-avatar {
+  filter: grayscale(1);
+  outline: 3px solid #ccc;
+  outline-offset: 2px;
+}
+.islander-photo {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+.islander-emoji-fallback { font-size: 1.8rem; }
 
 .islander-name {
   font-family: 'Playfair Display', serif;
