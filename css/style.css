@@ -604,6 +604,12 @@ ul { list-style: none; padding: 0; }
 }
 .rules-lock h3 { color: var(--coral); }
 
+.rules-faq {
+  border-left: 4px solid var(--teal) !important;
+  grid-column: 1 / -1;
+}
+.rules-faq h3 { color: #008b8b; }
+
 /* ---- SCHEDULE ---- */
 .schedule-grid {
   display: grid;
