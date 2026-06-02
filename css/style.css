@@ -128,8 +128,9 @@ ul { list-style: none; padding: 0; }
 .header-subtitle {
   font-size: clamp(.9rem, 2.5vw, 1.2rem);
   margin-top: .3rem;
-  opacity: .92;
-  font-weight: 300;
+  opacity: .96;
+  font-weight: 600;
+  text-shadow: 0 1px 8px rgba(0,0,0,.4);
 }
 
 /* Countdown */
