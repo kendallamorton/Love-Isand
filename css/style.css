@@ -85,43 +85,34 @@ ul { list-style: none; padding: 0; }
 
 /* ---- HEADER ---- */
 #site-header {
+  background: var(--grad-hero);
   color: #fff;
   text-align: center;
+  padding: 2.5rem 1rem 3rem;
   position: relative;
   overflow: hidden;
-  padding: 0;
 }
 
-.header-hero-img {
-  position: relative;
-  width: 100%;
-  max-height: 520px;
-  overflow: hidden;
-}
-
-.header-hero-img img {
-  width: 100%;
-  height: 520px;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-}
-
-.header-hero-img::after {
-  content: '';
+.header-bg-decor {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,.05) 0%,
-    rgba(0,0,0,.15) 50%,
-    rgba(255,20,147,.55) 100%
-  );
+  top: 0; left: 0; right: 0;
+  display: flex; justify-content: space-around;
+  font-size: 2.5rem;
+  opacity: .15;
+  pointer-events: none;
+  transform: translateY(-40%);
 }
 
-.header-inner {
-  background: var(--grad-hero);
-  padding: 1.5rem 1rem 2.5rem;
+.header-sun {
+  font-size: 3.5rem;
+  display: block;
+  margin: 0 auto .5rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,.15));
+  animation: spin-slow 20s linear infinite;
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 #site-header h1 {
