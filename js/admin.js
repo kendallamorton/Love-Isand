@@ -386,23 +386,51 @@ function refreshIslanderSelects() {
 
 // ---- PENDING BETS ----
 
+// Firebase-backed pending bets — keyed by Firebase push ID
+let _pendingBetsCache = {}; // { firebaseKey: betObject }
+
 function renderPendingBets() {
   const list = document.getElementById('pending-bets-list');
   if (!list) return;
-  const pending = JSON.parse(localStorage.getItem('loveIslandPendingBets') || '[]');
+  list.innerHTML = '<p class="muted">Loading…</p>';
 
-  if (!pending.length) {
+  const cfg = typeof FIREBASE_CONFIG !== 'undefined' ? FIREBASE_CONFIG : null;
+  if (!cfg || !cfg.apiKey || !cfg.databaseURL) {
+    list.innerHTML = '<p class="muted">Firebase not configured — cannot load submissions.</p>';
+    return;
+  }
+
+  try {
+    if (!firebase.apps.length) firebase.initializeApp(cfg);
+    firebase.database().ref('pendingBets').once('value', (snapshot) => {
+      _pendingBetsCache = {};
+      if (!snapshot.exists()) {
+        list.innerHTML = '<p class="muted">No pending bet requests.</p>';
+        return;
+      }
+      snapshot.forEach(child => { _pendingBetsCache[child.key] = child.val(); });
+      _renderPendingBetsList();
+    });
+  } catch (e) {
+    list.innerHTML = '<p class="muted">Could not load submissions.</p>';
+  }
+}
+
+function _renderPendingBetsList() {
+  const list = document.getElementById('pending-bets-list');
+  if (!list) return;
+  const entries = Object.entries(_pendingBetsCache);
+  const islanders = adminData.islanders || [];
+
+  if (!entries.length) {
     list.innerHTML = '<p class="muted">No pending bet requests.</p>';
     return;
   }
 
-  const islanders = adminData.islanders || [];
-
-  list.innerHTML = pending.map((bet, idx) => {
+  list.innerHTML = entries.map(([key, bet]) => {
     const isl = islanders.find(i => i.id === bet.islanderId);
-    const islName = isl ? isl.name : (bet.islanderId ? `ID: ${bet.islanderId}` : 'None selected');
+    const islName = isl ? isl.name : (bet.islanderId || 'None selected');
     const submittedDate = bet.submittedAt ? new Date(bet.submittedAt).toLocaleString() : 'Unknown';
-
     return `<div class="pending-bet-item">
       <div class="pending-bet-header">
         <span class="pending-bet-name">${escHtml(bet.name)}</span>
@@ -411,29 +439,27 @@ function renderPendingBets() {
       <div class="pending-bet-islander">Islander pick: <strong>${escHtml(islName)}</strong></div>
       ${bet.notes ? `<div class="pending-bet-notes">Notes: ${escHtml(bet.notes)}</div>` : ''}
       <div class="pending-bet-actions">
-        <button class="btn btn-primary btn-sm" onclick="approvePendingBet(${idx})">✅ Add to Participants</button>
-        <button class="btn btn-danger btn-sm" onclick="dismissPendingBet(${idx})">🗑 Dismiss</button>
+        <button class="btn btn-primary btn-sm" onclick="approvePendingBet('${escAttr(key)}')">✅ Add to Participants</button>
+        <button class="btn btn-danger btn-sm" onclick="dismissPendingBet('${escAttr(key)}')">🗑 Dismiss</button>
       </div>
     </div>`;
   }).join('');
 }
 
-function approvePendingBet(idx) {
-  const pending = JSON.parse(localStorage.getItem('loveIslandPendingBets') || '[]');
-  const bet = pending[idx];
+function approvePendingBet(key) {
+  const bet = _pendingBetsCache[key];
   if (!bet) return;
-  addParticipant(bet.name, bet.islanderId, false); // mark as unpaid until confirmed
-  pending.splice(idx, 1);
-  localStorage.setItem('loveIslandPendingBets', JSON.stringify(pending));
-  renderPendingBets();
-  showSaveBanner(`✅ Added ${bet.name} to participants. Don't forget to mark as paid once Venmo comes through!`);
+  addParticipant(bet.name, bet.islanderId, false);
+  firebase.database().ref('pendingBets/' + key).remove();
+  delete _pendingBetsCache[key];
+  _renderPendingBetsList();
+  showSaveBanner(`✅ Added ${bet.name} to participants. Mark as paid once Venmo comes through!`);
 }
 
-function dismissPendingBet(idx) {
-  const pending = JSON.parse(localStorage.getItem('loveIslandPendingBets') || '[]');
-  pending.splice(idx, 1);
-  localStorage.setItem('loveIslandPendingBets', JSON.stringify(pending));
-  renderPendingBets();
+function dismissPendingBet(key) {
+  firebase.database().ref('pendingBets/' + key).remove();
+  delete _pendingBetsCache[key];
+  _renderPendingBetsList();
 }
 
 // ---- DATA VIEW ----

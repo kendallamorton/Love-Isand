@@ -499,10 +499,21 @@ function handleJoinSubmit(e) {
 
   if (!name) return;
 
-  // Save pending bet to localStorage (admin can review these)
-  const pending = JSON.parse(localStorage.getItem('loveIslandPendingBets') || '[]');
-  pending.push({ name, islanderId, notes, submittedAt: new Date().toISOString() });
-  localStorage.setItem('loveIslandPendingBets', JSON.stringify(pending));
+  const bet = { name, islanderId, notes, submittedAt: new Date().toISOString() };
+
+  // Save to Firebase so admin can see it from any device
+  const cfg = typeof FIREBASE_CONFIG !== 'undefined' ? FIREBASE_CONFIG : null;
+  if (cfg && cfg.apiKey && cfg.databaseURL) {
+    try {
+      if (!firebase.apps.length) firebase.initializeApp(cfg);
+      firebase.database().ref('pendingBets').push(bet);
+    } catch (err) {
+      console.warn('Firebase write failed, falling back to localStorage', err);
+      saveBetToLocalStorage(bet);
+    }
+  } else {
+    saveBetToLocalStorage(bet);
+  }
 
   // Show success
   document.getElementById('join-form').classList.add('hidden');
@@ -554,6 +565,12 @@ function formatDate(iso) {
 
 function formatRelative(date) {
   return date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true });
+}
+
+function saveBetToLocalStorage(bet) {
+  const pending = JSON.parse(localStorage.getItem('loveIslandPendingBets') || '[]');
+  pending.push(bet);
+  localStorage.setItem('loveIslandPendingBets', JSON.stringify(pending));
 }
 
 // Expose for inline handlers
