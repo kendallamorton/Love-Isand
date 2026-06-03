@@ -365,24 +365,15 @@ function renderPicks() {
       const alive = isActive(pk.islanderId);
       const costHtml = pk.cost ? `<span class="pick-cost">$${pk.cost}</span>` : '';
       if (alive) {
-        return `<td><strong class="pick-active">${escHtml(name)}</strong>${costHtml}</td>`;
+        return `<strong class="pick-active">${escHtml(name)}</strong>${costHtml}`;
       } else {
-        return `<td><span class="pick-eliminated">${escHtml(name)}</span>${costHtml}</td>`;
+        return `<span class="pick-eliminated">${escHtml(name)}</span>${costHtml}`;
       }
     });
 
-    // Fill up to 2 pick columns
-    while (pickCells.length < 2) {
-      pickCells.push(`<td class="pick-empty">—</td>`);
-    }
-
-    const totalPaid = (p.paid ? gameData.season.entryFee : 0)
-      + picks.slice(1).reduce((s, pk) => s + (pk.cost || 0), 0);
-
     return `<tr>
       <td><span class="participant-name"><span class="money-bags">${moneyBags}</span> ${escHtml(p.name)}</span></td>
-      ${pickCells[0]}
-      ${pickCells[1]}
+      <td>${pickCells.join(' → ') || '<span class="pick-empty">—</span>'}</td>
     </tr>`;
   });
 
@@ -393,7 +384,6 @@ function renderPicks() {
           <tr>
             <th>Participant</th>
             <th>Islander</th>
-            <th>Islander 2</th>
           </tr>
         </thead>
         <tbody>
