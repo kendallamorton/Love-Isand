@@ -410,6 +410,8 @@ function renderPendingBets() {
       }
       snapshot.forEach(child => { _pendingBetsCache[child.key] = child.val(); });
       _renderPendingBetsList();
+    }, (err) => {
+      list.innerHTML = `<p class="muted">Error loading submissions: ${escHtml(err.message)}<br/><small>Check Firebase database rules — they may need to allow reads.</small></p>`;
     });
   } catch (e) {
     list.innerHTML = '<p class="muted">Could not load submissions.</p>';
