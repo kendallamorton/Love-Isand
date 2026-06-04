@@ -306,6 +306,17 @@
           "cost": 0
         }
       ]
+    },
+    {
+      "id": "sarah_rainer_1780544365449",
+      "name": "Sarah Rainer",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "sincere_rhea_1780019565771",
+          "cost": 0
+        }
+      ]
     }
   ],
   "schedule": {
@@ -318,5 +329,5 @@
     "saturday": false
   },
   "adminPasswordHash": "6bb0e8c9e94a8b1e6b1c9fca0f4d1e8b3a2c7f5d9e0b3a4c6d8f1e2b5c7d9a0b",
-  "lastUpdated": "2026-06-04T14:00:00.000Z"
+  "lastUpdated": "2026-06-04T03:39:25.449Z"
 }
