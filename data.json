@@ -13,7 +13,7 @@
     "peacockLink": "https://www.peacocktv.com",
     "loveIslandAppLink": "https://www.peacocktv.com",
     "casaAmorLocked": false,
-    "islanderAnnouncementPending": true
+    "islanderAnnouncementPending": false
   },
   "islanders": [
     {
@@ -103,9 +103,211 @@
       "status": "active",
       "isBombshell": false,
       "photo": "https://hips.hearstapps.com/hmg-prod/images/1a1920f3-c723-478c-ad50-a3e30560e2e3.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "gabriel_vasconcelos_1780456213725",
+      "name": "Gabriel Vasconcelos",
+      "photo": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_avif,q_auto:eco,dpr_2/rockcms/2026-05/love-island-season-8-gabriel-en-052826-4b30b3.png",
+      "status": "active",
+      "isBombshell": true
+    },
+    {
+      "id": "kayda_bosse_1780456923557",
+      "name": "Kayda Bosse",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS10I7ZwGiyZJ_rWJmuiXLeKoxzcgg0OAWaOVPDs_4Dw&s=10",
+      "status": "active",
+      "isBombshell": true
     }
   ],
-  "participants": [],
+  "participants": [
+    {
+      "id": "kendall_morton_1780457536144",
+      "name": "Kendall Morton",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "kc_chandler_1780019491801",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "holley_murphy_1780503246758",
+      "name": "Holley Murphy",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "melanie_moreno_1780019532539",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "danielle_damrich_1780503264729",
+      "name": "Danielle Damrich",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "melanie_moreno_1780019532539",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "dax_damrich_1780503276240",
+      "name": "Dax Damrich",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "beatriz_hatz_1780019408542",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "sonia_marie_traugott_1780506727319",
+      "name": "Sonia Marie Traugott",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "sincere_rhea_1780019565771",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "tiffany_1780506732110",
+      "name": "Tiffany",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "aniya_harvey_1780019403712",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "adam_1780506733677",
+      "name": "Adam",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "melanie_moreno_1780019532539",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "meghan_o_hair_1780506872836",
+      "name": "Meghan O'Hair",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "beatriz_hatz_1780019408542",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "lauren_h_1780509816553",
+      "name": "Lauren h",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "kc_chandler_1780019491801",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "dax_morton_1780509829732",
+      "name": "Dax Morton",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "kenzie_annis_1780019507658",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "erin_briley_1780529969756",
+      "name": "Erin Briley",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "melanie_moreno_1780019532539",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "tira_hawkins_1780530018413",
+      "name": "Tira Hawkins",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "aniya_harvey_1780019403712",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "lillie_popal_1780530126746",
+      "name": "Lillie Popal",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "melanie_moreno_1780019532539",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "kelly_barclay_1780530206585",
+      "name": "Kelly Barclay",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "sincere_rhea_1780019565771",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "morgan_gallegos_1780533047747",
+      "name": "Morgan Gallegos",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "aniya_harvey_1780019403712",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "brooke_bozant_1780533904019",
+      "name": "Brooke Bozant",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "kenzie_annis_1780019507658",
+          "cost": 0
+        }
+      ]
+    },
+    {
+      "id": "emily_dunn_1780533906434",
+      "name": "Emily Dunn",
+      "paid": true,
+      "picks": [
+        {
+          "islanderId": "kc_chandler_1780019491801",
+          "cost": 0
+        }
+      ]
+    }
+  ],
   "schedule": {
     "sunday": true,
     "monday": true,
@@ -116,5 +318,5 @@
     "saturday": false
   },
   "adminPasswordHash": "6bb0e8c9e94a8b1e6b1c9fca0f4d1e8b3a2c7f5d9e0b3a4c6d8f1e2b5c7d9a0b",
-  "lastUpdated": "2026-05-29T02:02:41.823Z"
+  "lastUpdated": "2026-06-04T14:00:00.000Z"
 }
