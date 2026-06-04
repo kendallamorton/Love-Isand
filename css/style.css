@@ -303,12 +303,23 @@ ul { list-style: none; padding: 0; }
   margin-bottom: .7rem;
 }
 
+/* ---- HERO STATS (always-visible strip under header) ---- */
+#hero-stats {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-mid);
+  padding: 1rem 1.5rem;
+}
+#hero-stats .stats-grid {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 /* ---- STATS GRID ---- */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: .75rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
 }
 .stat-card {
   background: var(--white);
