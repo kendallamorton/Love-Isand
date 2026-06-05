@@ -177,8 +177,6 @@ function renderStats() {
   const stats = [
     { icon: '💰', value: `$${pot}`, label: 'Pot Total' },
     { icon: '👥', value: participants.length, label: 'Participants' },
-    { icon: '🌴', value: islanders.length || '?', label: 'Islanders' },
-    { icon: '✅', value: active, label: 'Still in Villa' },
   ];
 
   const grid = document.getElementById('stats-grid');
