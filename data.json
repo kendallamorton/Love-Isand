@@ -124,6 +124,27 @@
       "photo": "https://people.com/thmb/8GLF7GEIo0OBQR6ndsggSNY3yis=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(749x0:751x2)/Love-Island-USA-Corbin-Mims-3-060526-6b44f6c25f244f8fa05d80564d4d17e0.jpg",
       "status": "active",
       "isBombshell": true
+    },
+    {
+      "id": "jen_terry_1780927796263",
+      "name": "Jen Terry",
+      "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/pea_lis8_characterportrait_titlesocial_textless_1920x1080_jen_4277.jpg",
+      "status": "active",
+      "isBombshell": true
+    },
+    {
+      "id": "sol_mya_1780927979528",
+      "name": "Sol Mya",
+      "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/pea_lis8_characterportrait_titlesocial_textless_1920x1080_sol_4277.jpg",
+      "status": "active",
+      "isBombshell": true
+    },
+    {
+      "id": "caleb_mcdaniel_1780928042123",
+      "name": "Caleb McDaniel",
+      "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/pea_lis8_characterportrait_titlesocial_textless_1920x1080_caleb_4277.jpg",
+      "status": "active",
+      "isBombshell": true
     }
   ],
   "participants": [
@@ -347,5 +368,5 @@
     "saturday": false
   },
   "adminPasswordHash": "6bb0e8c9e94a8b1e6b1c9fca0f4d1e8b3a2c7f5d9e0b3a4c6d8f1e2b5c7d9a0b",
-  "lastUpdated": "2026-06-08T16:00:00.000Z"
+  "lastUpdated": "2026-06-08T20:00:00.000Z"
 }
