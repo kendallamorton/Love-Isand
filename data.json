@@ -41,14 +41,6 @@
       "photo": "https://hips.hearstapps.com/hmg-prod/images/5578657b-5b63-4194-86e7-beffca331940.png?crop=1xw:1xh;center,top"
     },
     {
-      "id": "gabriel_vasconcelos_1780019467693",
-      "name": "Gabriel Vasconcelos",
-      "emoji": "🌴",
-      "status": "active",
-      "isBombshell": false,
-      "photo": "https://hips.hearstapps.com/hmg-prod/images/862fd400-2ea8-4f62-a558-0cd9ebefbb65.png?crop=1xw:1xh;center,top"
-    },
-    {
       "id": "kc_chandler_1780019491801",
       "name": "KC Chandler",
       "emoji": "🌴",
@@ -376,5 +368,5 @@
     "saturday": false
   },
   "adminPasswordHash": "6bb0e8c9e94a8b1e6b1c9fca0f4d1e8b3a2c7f5d9e0b3a4c6d8f1e2b5c7d9a0b",
-  "lastUpdated": "2026-06-15T06:00:00.000Z"
+  "lastUpdated": "2026-06-16T06:00:00.000Z"
 }
