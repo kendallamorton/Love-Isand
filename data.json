@@ -100,7 +100,7 @@
       "id": "gabriel_vasconcelos_1780456213725",
       "name": "Gabriel Vasconcelos",
       "photo": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_avif,q_auto:eco,dpr_2/rockcms/2026-05/love-island-season-8-gabriel-en-052826-4b30b3.png",
-      "status": "active",
+      "status": "eliminated",
       "isBombshell": true
     },
     {
@@ -128,7 +128,7 @@
       "id": "sol_mya_1780927979528",
       "name": "Sol Mya",
       "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/pea_lis8_characterportrait_titlesocial_textless_1920x1080_sol_4277.jpg",
-      "status": "active",
+      "status": "eliminated",
       "isBombshell": true
     },
     {
@@ -368,5 +368,5 @@
     "saturday": false
   },
   "adminPasswordHash": "6bb0e8c9e94a8b1e6b1c9fca0f4d1e8b3a2c7f5d9e0b3a4c6d8f1e2b5c7d9a0b",
-  "lastUpdated": "2026-06-16T06:00:00.000Z"
+  "lastUpdated": "2026-06-19T16:00:00.000Z"
 }
