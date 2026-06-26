@@ -13,6 +13,7 @@ const REFRESH_MS = 2 * 60 * 1000; // 2 minutes
 document.addEventListener('DOMContentLoaded', async () => {
   setupTabs();
   setupModal();
+  setupSwitchModal();
   await loadData();
   startAutoRefresh();
 });
@@ -122,6 +123,8 @@ function renderAll() {
   renderSchedule();
   renderLastUpdated();
   populateJoinIslanderSelect();
+  renderCasaAmorBanner();
+  populateSwitchSelects();
 }
 
 function renderLinks() {
@@ -134,6 +137,8 @@ function renderLinks() {
   setAttr('rules-venmo', 'href', venmoHref);
   setAttr('modal-venmo', 'href', venmoHref);
   setAttr('success-venmo', 'href', venmoHref);
+  setAttr('switch-venmo', 'href', venmoHref);
+  setAttr('switch-success-venmo', 'href', venmoHref);
   setAttr('sched-peacock', 'href', s.peacockLink || '#');
 }
 
@@ -508,6 +513,96 @@ function handleJoinSubmit(e) {
   document.getElementById('join-success').classList.remove('hidden');
 }
 
+// ---- CASA AMOR SWITCH MODAL ----
+
+function setupSwitchModal() {
+  const modal       = document.getElementById('switch-modal');
+  const closeBtn    = document.getElementById('switch-modal-close');
+  const successClose= document.getElementById('switch-success-close');
+  const form        = document.getElementById('switch-form');
+
+  if (closeBtn)     closeBtn.addEventListener('click', closeSwitchModal);
+  if (successClose) successClose.addEventListener('click', closeSwitchModal);
+  if (modal)        modal.addEventListener('click', (e) => { if (e.target === modal) closeSwitchModal(); });
+  if (form)         form.addEventListener('submit', handleSwitchSubmit);
+}
+
+function openSwitchModal() {
+  const modal = document.getElementById('switch-modal');
+  if (modal) { modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false'); }
+  const form = document.getElementById('switch-form');
+  const success = document.getElementById('switch-success');
+  if (form) form.classList.remove('hidden');
+  if (success) success.classList.add('hidden');
+  const paid = document.getElementById('switch-paid');
+  if (paid) paid.checked = false;
+}
+
+function closeSwitchModal() {
+  const modal = document.getElementById('switch-modal');
+  if (modal) { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); }
+}
+
+function renderCasaAmorBanner() {
+  if (!gameData) return;
+  const open = gameData.season.casaAmorOpen && !gameData.season.casaAmorLocked;
+  const banner   = document.getElementById('casa-amor-banner');
+  const rulesCta = document.getElementById('casa-amor-rules-cta');
+  if (banner)   banner.classList.toggle('hidden', !open);
+  if (rulesCta) rulesCta.classList.toggle('hidden', !open);
+}
+
+function populateSwitchSelects() {
+  if (!gameData) return;
+
+  const pSel = document.getElementById('switch-participant');
+  if (pSel) {
+    pSel.innerHTML = '<option value="">-- Select your name --</option>'
+      + gameData.participants.map(p => `<option value="${escAttr(p.id)}">${escHtml(p.name)}</option>`).join('');
+  }
+
+  const iSel = document.getElementById('switch-islander');
+  if (iSel) {
+    const active = gameData.islanders.filter(i => i.status === 'active');
+    iSel.innerHTML = '<option value="">-- Select new islander --</option>'
+      + active.map(i => `<option value="${escAttr(i.id)}">${escHtml(i.name)}</option>`).join('');
+  }
+}
+
+function handleSwitchSubmit(e) {
+  e.preventDefault();
+  const participantId = document.getElementById('switch-participant').value;
+  const islanderId    = document.getElementById('switch-islander').value;
+  const paidConfirmed = document.getElementById('switch-paid').checked;
+
+  if (!participantId || !islanderId || !paidConfirmed) return;
+
+  const participant = gameData.participants.find(p => p.id === participantId);
+  const islander    = gameData.islanders.find(i => i.id === islanderId);
+
+  const req = {
+    participantId,
+    participantName:  participant ? participant.name : participantId,
+    newIslanderId:    islanderId,
+    newIslanderName:  islander ? islander.name : islanderId,
+    paidConfirmed:    true,
+    submittedAt:      new Date().toISOString(),
+  };
+
+  const cfg = typeof FIREBASE_CONFIG !== 'undefined' ? FIREBASE_CONFIG : null;
+  if (cfg && cfg.apiKey && cfg.databaseURL) {
+    try {
+      if (!firebase.apps.length) firebase.initializeApp(cfg);
+      firebase.database().ref('switchRequests').push(req);
+    } catch (err) {
+      console.warn('Firebase write failed for switch request', err);
+    }
+  }
+
+  document.getElementById('switch-form').classList.add('hidden');
+  document.getElementById('switch-success').classList.remove('hidden');
+}
+
 // ---- TABS ----
 
 function setupTabs() {
@@ -563,4 +658,5 @@ function saveBetToLocalStorage(bet) {
 
 // Expose for inline handlers
 window.openJoinModal = openJoinModal;
+window.openSwitchModal = openSwitchModal;
 window.switchTab = switchTab;

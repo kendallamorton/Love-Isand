@@ -51,6 +51,13 @@
     <!-- OVERVIEW TAB -->
     <section id="tab-overview" class="tab-content active">
       <div class="section-inner">
+        <div id="casa-amor-banner" class="casa-amor-banner hidden">
+          <div class="casa-amor-banner-text">
+            <h3>🏖️ Casa Amor is Live!</h3>
+            <p>The 24-hour switch window is open — swap your pick for <strong>$25</strong> before it closes!</p>
+          </div>
+          <button class="btn btn-primary casa-amor-btn" onclick="openSwitchModal()">Switch My Pick →</button>
+        </div>
         <div class="stats-grid" id="stats-grid">
           <!-- rendered by JS -->
         </div>
@@ -142,6 +149,9 @@
                 <strong>During the 24-hour Casa Amor window</strong><br/>
                 In the 24 hrs between the last Casa Amor episode and the islanders' return to the villa, you can switch your pick for <strong>$25</strong>. Kendall will send a reminder.
               </div>
+            </div>
+            <div id="casa-amor-rules-cta" class="hidden" style="margin-top:1rem;text-align:center">
+              <button class="btn btn-primary" onclick="openSwitchModal()">🔀 Switch My Pick Now →</button>
             </div>
           </div>
 
@@ -269,6 +279,42 @@
     </div>
   </div>
 
+  <!-- SWITCH PICK MODAL (Casa Amor) -->
+  <div id="switch-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" id="switch-modal-close" aria-label="Close">✕</button>
+      <h2>🔀 Switch Your Pick</h2>
+      <p>Casa Amor window is open! Switch for <strong>$25</strong> via Venmo to <a id="switch-venmo" href="#" target="_blank">@kendall_morton</a>.</p>
+      <form id="switch-form">
+        <div class="form-group">
+          <label for="switch-participant">Your Name</label>
+          <select id="switch-participant" name="participant" required>
+            <option value="">-- Select your name --</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="switch-islander">New Islander Pick</label>
+          <select id="switch-islander" name="islander" required>
+            <option value="">-- Select new islander --</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="switch-confirm-label">
+            <input type="checkbox" id="switch-paid" name="paidConfirm" required />
+            <span>I confirm I have already paid <strong>$25</strong> to <strong>@kendall_morton</strong> via Venmo</span>
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Submit Switch Request 🔀</button>
+      </form>
+      <div id="switch-success" class="join-success hidden">
+        <div class="success-emoji">🎉</div>
+        <h3>Switch request submitted!</h3>
+        <p>Kendall will update your pick. Make sure you've <strong>Venmo'd $25 to <a id="switch-success-venmo" href="#" target="_blank">@kendall_morton</a></strong>!</p>
+        <button class="btn btn-secondary" id="switch-success-close">Close</button>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer id="site-footer">
     <div class="footer-inner">
@@ -284,7 +330,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
   <!-- Your Firebase config — fill in firebase-config.js -->
   <script src="firebase-config.js"></script>
-  <script src="js/app.js?v=3"></script>
+  <script src="js/app.js?v=4"></script>
   <script src="js/chat.js?v=2"></script>
 </body>
 </html>

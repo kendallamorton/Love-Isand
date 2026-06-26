@@ -739,6 +739,47 @@ ul { list-style: none; padding: 0; }
 .join-success p { font-size: .9rem; color: var(--text-mid); margin-bottom: 1.25rem; }
 .hidden { display: none !important; }
 
+/* Casa Amor banner */
+.casa-amor-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, #ff4da8 0%, #ff8c42 100%);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-md);
+}
+.casa-amor-banner h3 { color: #fff; font-size: 1.05rem; margin-bottom: .2rem; }
+.casa-amor-banner p  { color: rgba(255,255,255,.92); font-size: .88rem; margin: 0; }
+.casa-amor-btn {
+  background: #fff !important;
+  color: var(--pink) !important;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.casa-amor-btn:hover { background: rgba(255,255,255,.88) !important; }
+
+/* Switch confirm checkbox */
+.switch-confirm-label {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  cursor: pointer;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+.switch-confirm-label input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: .2rem;
+  flex-shrink: 0;
+  accent-color: var(--pink);
+  cursor: pointer;
+}
+
 /* ---- FOOTER ---- */
 #site-footer {
   background: var(--purple-dark);
