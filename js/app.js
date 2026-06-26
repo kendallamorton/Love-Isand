@@ -318,12 +318,14 @@ function renderIslanders() {
   grid.innerHTML = sorted.map(isl => {
     const isElim = isl.status === 'eliminated';
     const isBomb = isl.isBombshell;
+    const isCasa = isl.isCasa;
     const badge  = isElim ? '<span class="islander-badge badge-eliminated">Eliminated</span>'
+                 : isCasa ? '<span class="islander-badge badge-casa">Casa Amor</span><span class="islander-badge badge-active">Active</span>'
                  : isBomb ? '<span class="islander-badge badge-bombshell">Bombshell</span><span class="islander-badge badge-active">Active</span>'
                  : '<span class="islander-badge badge-active">Active ✨</span>';
     const avatar = isl.photo
       ? `<img src="${escHtml(isl.photo)}" alt="${escHtml(isl.name)}" class="islander-photo" loading="lazy" onerror="this.parentElement.innerHTML='💛'" />`
-      : `<span class="islander-emoji-fallback">${isBomb ? '💣' : (isElim ? '💔' : '💛')}</span>`;
+      : `<span class="islander-emoji-fallback">${isCasa ? '🏖️' : isBomb ? '💣' : (isElim ? '💔' : '💛')}</span>`;
     return `
       <div class="islander-card ${isElim ? 'eliminated' : 'active'}">
         <div class="islander-avatar">${avatar}</div>

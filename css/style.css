@@ -486,6 +486,10 @@ ul { list-style: none; padding: 0; }
   background: linear-gradient(135deg, #9b59b6, #8e44ad);
   color: #fff;
 }
+.badge-casa {
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  color: #fff;
+}
 
 .islanders-coming-soon {
   grid-column: 1 / -1;
