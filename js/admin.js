@@ -225,8 +225,9 @@ function renderIslandersMgmt() {
       const name  = getVal('new-islander-name').trim();
       const photo = getVal('new-islander-photo').trim();
       const bomb  = isChecked('new-islander-bombshell');
+      const casa  = isChecked('new-islander-casa');
       if (!name) return;
-      addIslander(name, photo, bomb);
+      addIslander(name, photo, bomb, casa);
       e.target.reset();
     };
   }
@@ -235,10 +236,10 @@ function renderIslandersMgmt() {
   refreshIslanderSelects();
 }
 
-function addIslander(name, photo, isBombshell) {
+function addIslander(name, photo, isBombshell, isCasa) {
   const id = slugify(name) + '_' + Date.now();
   adminData.islanders = adminData.islanders || [];
-  adminData.islanders.push({ id, name, photo: photo || '', status: 'active', isBombshell });
+  adminData.islanders.push({ id, name, photo: photo || '', status: 'active', isBombshell, isCasa: isCasa || false });
   saveAdminData();
   renderIslandersMgmt();
   renderParticipantsMgmt();
