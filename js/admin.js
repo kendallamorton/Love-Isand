@@ -116,6 +116,7 @@ function renderAdminAll() {
   renderIslandersMgmt();
   renderParticipantsMgmt();
   renderPendingBets();
+  renderSwitchRequests();
   renderDataView();
 }
 
@@ -465,6 +466,106 @@ function dismissPendingBet(key) {
   _renderPendingBetsList();
 }
 
+// ---- SWITCH REQUESTS ----
+
+let _switchRequestsCache = {}; // { firebaseKey: requestObject }
+
+function renderSwitchRequests() {
+  const list = document.getElementById('switch-requests-list');
+  if (!list) return;
+  list.innerHTML = '<p class="muted">Loading…</p>';
+
+  const cfg = typeof FIREBASE_CONFIG !== 'undefined' ? FIREBASE_CONFIG : null;
+  if (!cfg || !cfg.apiKey || !cfg.databaseURL) {
+    list.innerHTML = '<p class="muted">Firebase not configured — cannot load switch requests.</p>';
+    return;
+  }
+
+  try {
+    if (!firebase.apps.length) firebase.initializeApp(cfg);
+    firebase.database().ref('switchRequests').once('value', (snapshot) => {
+      _switchRequestsCache = {};
+      if (!snapshot.exists()) {
+        list.innerHTML = '<p class="muted">No switch requests.</p>';
+        return;
+      }
+      snapshot.forEach(child => { _switchRequestsCache[child.key] = child.val(); });
+      _renderSwitchRequestsList();
+    }, (err) => {
+      list.innerHTML = `<p class="muted">Error loading switch requests: ${escHtml(err.message)}</p>`;
+    });
+  } catch (e) {
+    list.innerHTML = '<p class="muted">Could not load switch requests.</p>';
+  }
+}
+
+function _renderSwitchRequestsList() {
+  const list = document.getElementById('switch-requests-list');
+  if (!list) return;
+  const entries = Object.entries(_switchRequestsCache);
+  const islanders = adminData.islanders || [];
+  const participants = adminData.participants || [];
+
+  if (!entries.length) {
+    list.innerHTML = '<p class="muted">No switch requests.</p>';
+    return;
+  }
+
+  list.innerHTML = entries.map(([key, req]) => {
+    const newIsl = islanders.find(i => i.id === req.newIslanderId);
+    const newIslName = newIsl ? newIsl.name : (req.newIslanderName || req.newIslanderId || 'Unknown');
+    const participant = participants.find(p => p.id === req.participantId);
+    const currentIsl = participant && participant.picks && participant.picks.length
+      ? islanders.find(i => i.id === participant.picks[participant.picks.length - 1].islanderId)
+      : null;
+    const currentName = currentIsl ? currentIsl.name : 'Unknown';
+    const submittedDate = req.submittedAt ? new Date(req.submittedAt).toLocaleString() : 'Unknown';
+    const participantFound = !!participant;
+
+    return `<div class="pending-bet-item">
+      <div class="pending-bet-header">
+        <span class="pending-bet-name">${escHtml(req.participantName || req.participantId)}</span>
+        <span class="pending-bet-meta">Submitted: ${submittedDate}</span>
+      </div>
+      <div class="pending-bet-islander">
+        Current pick: <strong>${escHtml(currentName)}</strong> →
+        New pick: <strong>${escHtml(newIslName)}</strong>
+      </div>
+      ${!participantFound ? `<div class="pending-bet-notes" style="color:#dc3545">⚠️ Participant not found in local data — check the name matches.</div>` : ''}
+      <div class="pending-bet-actions">
+        <button class="btn btn-primary btn-sm" onclick="applySwitchRequest('${escAttr(key)}')" ${!participantFound ? 'disabled' : ''}>✅ Apply Switch ($25)</button>
+        <button class="btn btn-danger btn-sm" onclick="dismissSwitchRequest('${escAttr(key)}')">🗑 Dismiss</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function applySwitchRequest(key) {
+  const req = _switchRequestsCache[key];
+  if (!req) return;
+  const participants = adminData.participants || [];
+  const pidx = participants.findIndex(p => p.id === req.participantId);
+  if (pidx === -1) {
+    alert('Participant not found. Cannot apply switch.');
+    return;
+  }
+  const switchFee = adminData.season.switchFee || 25;
+  adminData.participants[pidx].picks = adminData.participants[pidx].picks || [];
+  adminData.participants[pidx].picks.push({ islanderId: req.newIslanderId, cost: switchFee });
+  saveAdminData();
+  firebase.database().ref('switchRequests/' + key).remove();
+  delete _switchRequestsCache[key];
+  _renderSwitchRequestsList();
+  renderParticipantsMgmt();
+  showSaveBanner(`✅ Switch applied for ${req.participantName} → ${req.newIslanderName}. Export &amp; commit data.json to publish!`);
+}
+
+function dismissSwitchRequest(key) {
+  firebase.database().ref('switchRequests/' + key).remove();
+  delete _switchRequestsCache[key];
+  _renderSwitchRequestsList();
+}
+
 // ---- DATA VIEW ----
 
 function renderDataView() {
@@ -581,3 +682,5 @@ window.togglePaid         = togglePaid;
 window.removeParticipant  = removeParticipant;
 window.approvePendingBet  = approvePendingBet;
 window.dismissPendingBet  = dismissPendingBet;
+window.applySwitchRequest = applySwitchRequest;
+window.dismissSwitchRequest = dismissSwitchRequest;

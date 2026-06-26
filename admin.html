@@ -67,6 +67,7 @@
         <button class="admin-tab-btn" data-atab="islanders-mgmt">🌴 Islanders</button>
         <button class="admin-tab-btn" data-atab="participants-mgmt">💸 Participants</button>
         <button class="admin-tab-btn" data-atab="pending-bets">📬 Pending Bets</button>
+        <button class="admin-tab-btn" data-atab="switch-requests">🔀 Switch Requests</button>
         <button class="admin-tab-btn" data-atab="data-view">🗄️ Data JSON</button>
       </nav>
 
@@ -201,6 +202,15 @@
         <p class="section-desc" style="margin-bottom:1rem">These are submissions from the public "Join" form. Review them and add to Participants once verified &amp; paid.</p>
         <div id="pending-bets-list" class="admin-card">
           <p class="muted">No pending bet requests.</p>
+        </div>
+      </section>
+
+      <!-- ===================== SWITCH REQUESTS ===================== -->
+      <section id="atab-switch-requests" class="admin-tab-content">
+        <h2>🔀 Casa Amor Switch Requests</h2>
+        <p class="section-desc" style="margin-bottom:1rem">These are submitted switch requests from the Casa Amor window. Click <strong>Apply</strong> to update the participant's pick in the local data, then export &amp; commit <code>data.json</code> to publish.</p>
+        <div id="switch-requests-list" class="admin-card">
+          <p class="muted">No switch requests.</p>
         </div>
       </section>
 
