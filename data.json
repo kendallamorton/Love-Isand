@@ -143,7 +143,7 @@
       "id": "amora_cache_1782478188584",
       "name": "Amora Cacheé",
       "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/pea_lis8_characterportrait_titlesocial_textless_1920x1080_amora_2.jpg",
-      "status": "active",
+      "status": "eliminated",
       "isBombshell": false,
       "isCasa": true
     },
@@ -167,7 +167,7 @@
       "id": "sydney_eugene_1782478286970",
       "name": "Sydney Eugene",
       "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/pea_lis8_characterportrait_titlesocial_textless_1920x1080_sydney_4277_2_1.jpg",
-      "status": "active",
+      "status": "eliminated",
       "isBombshell": false,
       "isCasa": true
     },
@@ -183,7 +183,7 @@
       "id": "carl_schmidt_1782478358839",
       "name": "Carl Schmidt",
       "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/pea_lis8_characterportrait_titlesocial_textless_1920x1080_carl.jpg",
-      "status": "active",
+      "status": "eliminated",
       "isBombshell": false,
       "isCasa": true
     },
@@ -191,7 +191,7 @@
       "id": "chay_nehra_1782478391200",
       "name": "Chay Nehra",
       "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/PEA_LIS8_CharacterPortrait_TitleSocial_TEXTLESS_1920x1080_CHAY_4277%20%281%29.jpg",
-      "status": "active",
+      "status": "eliminated",
       "isBombshell": false,
       "isCasa": true
     },
@@ -199,7 +199,7 @@
       "id": "corey_sawyer_1782478421503",
       "name": "Corey Sawyer",
       "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/PEA_LIS8_CharacterPortrait_TitleSocial_TEXTLESS_1920x1080_COREY_4277%20%281%29.jpg",
-      "status": "active",
+      "status": "eliminated",
       "isBombshell": false,
       "isCasa": true
     },
@@ -223,7 +223,7 @@
       "id": "ronnie_gunter_1782478524185",
       "name": "Ronnie Gunter",
       "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/pea_lis8_characterportrait_titlesocial_textless_1920x1080_ronnie_4277_1.jpg",
-      "status": "active",
+      "status": "eliminated",
       "isBombshell": false,
       "isCasa": true
     }
@@ -473,5 +473,5 @@
     "saturday": false
   },
   "adminPasswordHash": "6bb0e8c9e94a8b1e6b1c9fca0f4d1e8b3a2c7f5d9e0b3a4c6d8f1e2b5c7d9a0b",
-  "lastUpdated": "2026-06-27T02:00:00.000Z"
+  "lastUpdated": "2026-06-27T04:42:31.495Z"
 }
