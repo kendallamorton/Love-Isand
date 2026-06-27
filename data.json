@@ -237,6 +237,10 @@
         {
           "islanderId": "melanie_moreno_1780019532539",
           "cost": 0
+        },
+        {
+          "islanderId": "kayda_bosse_1780456923557",
+          "cost": 25
         }
       ]
     },
@@ -465,5 +469,5 @@
     "saturday": false
   },
   "adminPasswordHash": "6bb0e8c9e94a8b1e6b1c9fca0f4d1e8b3a2c7f5d9e0b3a4c6d8f1e2b5c7d9a0b",
-  "lastUpdated": "2026-06-26T22:27:29.747Z"
+  "lastUpdated": "2026-06-27T00:25:37.135Z"
 }
