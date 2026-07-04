@@ -122,7 +122,7 @@
       "id": "jen_terry_1780927796263",
       "name": "Jen Terry",
       "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/pea_lis8_characterportrait_titlesocial_textless_1920x1080_jen_4277.jpg",
-      "status": "active",
+      "status": "eliminated",
       "isBombshell": true
     },
     {
@@ -136,7 +136,7 @@
       "id": "caleb_mcdaniel_1780928042123",
       "name": "Caleb McDaniel",
       "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/pea_lis8_characterportrait_titlesocial_textless_1920x1080_caleb_4277.jpg",
-      "status": "active",
+      "status": "eliminated",
       "isBombshell": true
     },
     {
@@ -151,7 +151,7 @@
       "id": "jaiden_bacciocco_1782478218205",
       "name": "Jaiden Bacciocco",
       "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/pea_lis8_characterportrait_titlesocial_textless_1920x1080_jaiden_4273_1_0.jpg",
-      "status": "active",
+      "status": "eliminated",
       "isBombshell": false,
       "isCasa": true
     },
@@ -215,7 +215,7 @@
       "id": "gal_tschnieder_1782478488830",
       "name": "Gal Tschnieder",
       "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/PEA_LIS8_CharacterPortrait_TitleSocial_TEXTLESS_1920x1080_GAL_4273.jpg",
-      "status": "active",
+      "status": "eliminated",
       "isBombshell": false,
       "isCasa": true
     },
@@ -473,5 +473,5 @@
     "saturday": false
   },
   "adminPasswordHash": "6bb0e8c9e94a8b1e6b1c9fca0f4d1e8b3a2c7f5d9e0b3a4c6d8f1e2b5c7d9a0b",
-  "lastUpdated": "2026-06-30T04:19:09.566Z"
+  "lastUpdated": "2026-07-04T03:20:51.860Z"
 }
