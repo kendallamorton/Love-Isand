@@ -26,12 +26,20 @@
       "photo": "https://hips.hearstapps.com/hmg-prod/images/b16e7133-6c7c-436c-bc72-98d446f59d0c.png?crop=1xw:1xh;center,top"
     },
     {
-      "id": "beatriz_hatz_1780019408542",
-      "name": "Beatriz Hatz",
-      "emoji": "🌴",
-      "status": "eliminated",
+      "id": "carl_schmidt_1782478358839",
+      "name": "Carl Schmidt",
+      "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/pea_lis8_characterportrait_titlesocial_textless_1920x1080_carl.jpg",
+      "status": "active",
       "isBombshell": false,
-      "photo": "https://hips.hearstapps.com/hmg-prod/images/ae552972-97d6-4c84-a257-0c0834707559.png?crop=1xw:1xh;center,top"
+      "isCasa": true
+    },
+    {
+      "id": "trinity_tatum_1780019582208",
+      "name": "Trinity Tatum",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/500fab10-7767-4efa-9d3c-aaab1f25cdd4.png?crop=1xw:1xh;center,top"
     },
     {
       "id": "bryce_dettloff_1780019443289",
@@ -40,6 +48,45 @@
       "status": "active",
       "isBombshell": false,
       "photo": "https://hips.hearstapps.com/hmg-prod/images/5578657b-5b63-4194-86e7-beffca331940.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "kayda_bosse_1780456923557",
+      "name": "Kayda Bosse",
+      "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/love-island-usa-season-8-kayda.jpg",
+      "status": "active",
+      "isBombshell": true
+    },
+    {
+      "id": "zach_georgiou_1780019616540",
+      "name": "Zach Georgiou",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/1a1920f3-c723-478c-ad50-a3e30560e2e3.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "melanie_moreno_1780019532539",
+      "name": "Melanie Moreno",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/8a1bb0e2-0030-43a1-89e2-8382ddce8ce9.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "sincere_rhea_1780019565771",
+      "name": "Sincere Rhea",
+      "emoji": "🌴",
+      "status": "active",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/3b7eb94d-e185-4794-966f-958b0df55a69.png?crop=1xw:1xh;center,top"
+    },
+    {
+      "id": "beatriz_hatz_1780019408542",
+      "name": "Beatriz Hatz",
+      "emoji": "🌴",
+      "status": "eliminated",
+      "isBombshell": false,
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/ae552972-97d6-4c84-a257-0c0834707559.png?crop=1xw:1xh;center,top"
     },
     {
       "id": "kc_chandler_1780019491801",
@@ -58,14 +105,6 @@
       "photo": "https://hips.hearstapps.com/hmg-prod/images/447ddefa-5906-472f-b560-130ab0b5f987.png?crop=1xw:1xh;center,top"
     },
     {
-      "id": "melanie_moreno_1780019532539",
-      "name": "Melanie Moreno",
-      "emoji": "🌴",
-      "status": "active",
-      "isBombshell": false,
-      "photo": "https://hips.hearstapps.com/hmg-prod/images/8a1bb0e2-0030-43a1-89e2-8382ddce8ce9.png?crop=1xw:1xh;center,top"
-    },
-    {
       "id": "sean_reifel_1780019551086",
       "name": "Sean Reifel",
       "emoji": "🌴",
@@ -74,41 +113,10 @@
       "photo": "https://hips.hearstapps.com/hmg-prod/images/30ce2dc1-945c-4c01-8392-22e67a89e747.png?crop=1xw:1xh;center,top"
     },
     {
-      "id": "sincere_rhea_1780019565771",
-      "name": "Sincere Rhea",
-      "emoji": "🌴",
-      "status": "active",
-      "isBombshell": false,
-      "photo": "https://hips.hearstapps.com/hmg-prod/images/3b7eb94d-e185-4794-966f-958b0df55a69.png?crop=1xw:1xh;center,top"
-    },
-    {
-      "id": "trinity_tatum_1780019582208",
-      "name": "Trinity Tatum",
-      "emoji": "🌴",
-      "status": "active",
-      "isBombshell": false,
-      "photo": "https://hips.hearstapps.com/hmg-prod/images/500fab10-7767-4efa-9d3c-aaab1f25cdd4.png?crop=1xw:1xh;center,top"
-    },
-    {
-      "id": "zach_georgiou_1780019616540",
-      "name": "Zach Georgiou",
-      "emoji": "🌴",
-      "status": "active",
-      "isBombshell": false,
-      "photo": "https://hips.hearstapps.com/hmg-prod/images/1a1920f3-c723-478c-ad50-a3e30560e2e3.png?crop=1xw:1xh;center,top"
-    },
-    {
       "id": "gabriel_vasconcelos_1780456213725",
       "name": "Gabriel Vasconcelos",
       "photo": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_avif,q_auto:eco,dpr_2/rockcms/2026-05/love-island-season-8-gabriel-en-052826-4b30b3.png",
       "status": "eliminated",
-      "isBombshell": true
-    },
-    {
-      "id": "kayda_bosse_1780456923557",
-      "name": "Kayda Bosse",
-      "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/love-island-usa-season-8-kayda.jpg",
-      "status": "active",
       "isBombshell": true
     },
     {
@@ -176,14 +184,6 @@
       "name": "Tierra Davis",
       "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/pea_lis8_characterportrait_titlesocial_textless_1920x1080_tierra_4273_1.jpg",
       "status": "eliminated",
-      "isBombshell": false,
-      "isCasa": true
-    },
-    {
-      "id": "carl_schmidt_1782478358839",
-      "name": "Carl Schmidt",
-      "photo": "https://www.peacocktv.com/sites/peacock/files/styles/scale_862/public/2026/06/pea_lis8_characterportrait_titlesocial_textless_1920x1080_carl.jpg",
-      "status": "active",
       "isBombshell": false,
       "isCasa": true
     },
@@ -473,5 +473,5 @@
     "saturday": false
   },
   "adminPasswordHash": "6bb0e8c9e94a8b1e6b1c9fca0f4d1e8b3a2c7f5d9e0b3a4c6d8f1e2b5c7d9a0b",
-  "lastUpdated": "2026-07-12T06:00:00.000Z"
+  "lastUpdated": "2026-07-12T12:00:00.000Z"
 }
