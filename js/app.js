@@ -662,3 +662,77 @@ function saveBetToLocalStorage(bet) {
 window.openJoinModal = openJoinModal;
 window.openSwitchModal = openSwitchModal;
 window.switchTab = switchTab;
+
+// ---- FIREWORKS ----
+
+(function () {
+  const canvas = document.getElementById('fireworks-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  const COLORS = ['#FF1493','#FFD700','#FF6B6B','#00CED1','#FF4DAA','#fff','#FFA500','#7B2FBE'];
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const particles = [];
+
+  function spawnBurst() {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height * 0.7;
+    const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+    const count = 28 + Math.floor(Math.random() * 20);
+    for (let i = 0; i < count; i++) {
+      const angle = (Math.PI * 2 * i) / count;
+      const speed = 1.5 + Math.random() * 3.5;
+      particles.push({
+        x, y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        alpha: 1,
+        color,
+        radius: 1.5 + Math.random() * 2,
+        decay: 0.013 + Math.random() * 0.01,
+        gravity: 0.06,
+      });
+    }
+  }
+
+  let lastBurst = 0;
+  function loop(ts) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (ts - lastBurst > 700) {
+      spawnBurst();
+      if (Math.random() < 0.4) spawnBurst();
+      lastBurst = ts;
+    }
+
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.x  += p.vx;
+      p.y  += p.vy;
+      p.vy += p.gravity;
+      p.vx *= 0.98;
+      p.alpha -= p.decay;
+      if (p.alpha <= 0) { particles.splice(i, 1); continue; }
+      ctx.save();
+      ctx.globalAlpha = p.alpha;
+      ctx.fillStyle   = p.color;
+      ctx.shadowColor = p.color;
+      ctx.shadowBlur  = 6;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    requestAnimationFrame(loop);
+  }
+
+  requestAnimationFrame(loop);
+})();

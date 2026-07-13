@@ -58,23 +58,12 @@
           </div>
           <button class="btn btn-primary casa-amor-btn" onclick="openSwitchModal()">Switch My Pick →</button>
         </div>
-        <div class="stats-grid" id="stats-grid">
-          <!-- rendered by JS -->
-        </div>
-        <div class="overview-cols">
-          <div class="overview-right" style="width:100%">
-            <div class="card" id="quick-rules-card">
-              <h2>⚡ Quick Rules</h2>
-              <ul class="quick-rules">
-                <li>💵 <strong>$20</strong> to play — Venmo <a id="qr-venmo" href="#" target="_blank">@kendall_morton</a></li>
-                <li>⏰ Pick deadline: <strong>Wed Jun 3 · 8 pm CT</strong></li>
-                <li>🏝️ Furthest islander wins the pot</li>
-                <li>🔀 Buy back for <strong>$15</strong> (pre-Casa Amor)</li>
-                <li>🔀 Switch pick for <strong>$25</strong> (during Casa Amor)</li>
-                <li>🔒 Picks locked after islanders return from Casa Amor</li>
-                <li>😵‍💫 Too busy to watch? <strong>Kendall will text you</strong> if your islander is eliminated</li>
-              </ul>
-            </div>
+        <div class="winner-banner" id="winner-banner">
+          <canvas id="fireworks-canvas" class="fireworks-canvas"></canvas>
+          <div class="winner-content">
+            <div class="winner-trophy">🏆</div>
+            <h2 class="winner-title">Trinity &amp; Bryce are the winners of Love Island 2026</h2>
+            <p class="winner-congrats">Congratulations Matt, Kendall, Brooke, and Lauren!</p>
           </div>
         </div>
       </div>
@@ -330,7 +319,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
   <!-- Your Firebase config — fill in firebase-config.js -->
   <script src="firebase-config.js"></script>
-  <script src="js/app.js?v=5"></script>
+  <script src="js/app.js?v=6"></script>
   <script src="js/chat.js?v=2"></script>
 </body>
 </html>
